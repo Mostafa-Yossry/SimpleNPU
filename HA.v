@@ -1,8 +1,8 @@
 module HA (
-    input A, 
-    input B, 
-    output sum, 
-    output carry
+    output carry, 
+    output sum,
+     input A, 
+     input B
 );
     
 assign sum = A ^ B;  

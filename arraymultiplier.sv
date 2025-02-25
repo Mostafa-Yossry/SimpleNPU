@@ -5,11 +5,12 @@ module ArrayMultiplier #(
     input rst,
     input [7:0] A [N-1:0],  
     input [7:0] B [N-1:0],
+    input  enable,
     output reg [(2*N)-1:0] PDONE,
-    output [15:0] out [(2*N)-1:0]  // Standardized output size
+    output  [15+(N-1):0] out [(2*N)-1:0]  
 );
     
-    wire [7:0] A_buff [N-1:0][N-1:0]; // 2D array for buffer
+    wire [7:0] A_buff [N-1:0][N-1:0]; 
     wire [7:0] B_buff [N-1:0][N-1:0];
 
     genvar i, j;
@@ -24,6 +25,7 @@ module ArrayMultiplier #(
                     .clk(clk),
                     .rst(rst),
                     .out(out[i * N + j]),
+                    .enable(enable),
                     .PDONE(PDONE[i * N + j]),
                     .A_buff(A_buff[i][j]),
                     .B_buff(B_buff[i][j])

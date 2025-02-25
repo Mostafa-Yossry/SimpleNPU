@@ -1,5 +1,7 @@
 top_tb.sv
 top.sv
+relu.sv
+fifo.sv
 parralelinterface.sv
 arraymultiplier.sv
 PE.v
