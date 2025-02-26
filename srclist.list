@@ -5,7 +5,6 @@ fifo.sv
 parralelinterface.sv
 arraymultiplier.sv
 PE.v
-MACtb.v
 MAC.v
 wallacetree.v
 FA.v
